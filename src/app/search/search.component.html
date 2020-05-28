@@ -1,0 +1,9 @@
+<p>search works!</p>
+
+<input #searchBox (input)="search(searchBox.value)" />
+
+
+<li *ngFor="let movie of movies$.results | async">
+    {{ movie?.title }}
+</li>
+

@@ -1,0 +1,13 @@
+<h2>Top Rated Movies</h2>
+
+
+<ul *ngIf="top_movies">
+    <li *ngFor="let movie of top_movies.results" routerLink="/detail" (click)="sendId(movie.id)">
+        <p class="title">{{ movie.title }}</p>
+        <p>{{ movie.release_date }}</p>
+        <br>
+        <p class="vote">Votes: {{ movie.vote_average }}</p>
+       
+    </li>
+</ul>
+

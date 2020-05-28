@@ -1,0 +1,14 @@
+.customEdit{color: white;}
+.customEdit:hover 
+{
+ color: rgb(233, 216, 196);   
+}
+
+nav{
+    background: rgb(140, 74, 246);
+}
+
+div{
+    margin-top: 2em;
+}
+
