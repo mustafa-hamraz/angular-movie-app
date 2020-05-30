@@ -10,6 +10,7 @@ import { PopularMoviesComponent } from './popular-movies/popular-movies.componen
 import { TopMoviesComponent } from './top-movies/top-movies.component';
 import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DetailComponent } from './detail/detail.component';
     PopularMoviesComponent,
     TopMoviesComponent,
     SearchComponent,
-    DetailComponent
+    DetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

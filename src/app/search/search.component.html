@@ -1,9 +1,16 @@
-<p>search works!</p>
+<div class="movieSearchBox">
+    <input #searchBox class="movieSearchInput" type="text" placeholder="Search" autofocus>
+    <button type="submit" class="searchBtn" (click)="search(searchBox.value)">Search</button>
+</div>
 
-<input #searchBox (input)="search(searchBox.value)" />
+<h2>Search Results</h2>
 
 
-<li *ngFor="let movie of movies$.results | async">
-    {{ movie?.title }}
-</li>
-
+<ul *ngIf="searchResult">
+    <div *ngFor="let movie of searchResult.results" routerLink="/detail" (click)="sendId(movie.id)" class="card" >
+        <img src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" class="card-img-top">
+        <div class="card-body">
+          <h6 class="card-title">{{ movie.title }}</h6>
+        </div>
+    </div>
+</ul>

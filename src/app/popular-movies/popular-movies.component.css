@@ -2,35 +2,42 @@ ul{
     list-style-type: 'none';
     margin: 0;
     padding: 0;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
+.card{
+    width: 12rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 
-li{
-    background: rgb(238, 238, 238);
-    padding: 1em;
-    margin-right: 10px;
-    width: 22%;
-    height: 200px;
-    margin-bottom: 1em;
-    display: flex;
-    flex-direction: column;
 }
-li:hover{
+.card:hover{
     cursor: pointer;
-    background: rgb(111, 0, 255);
-    color: white;
+    opacity:0.7;
+}
+#pageBtns{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+.btn{
+    background: rgb(140, 74, 246);
+    border-color: white;
+}
+.btn:hover{
+    opacity:0.7;
+}
+@media only screen and (max-width: 444px) {
+    .card{
+        width: 45%;
+    }
+}
 
-}
-p{
-    margin: 0;
-  
-}
-p.title{
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-.vote{
-    margin-bottom: 0;
-    margin-top: auto;
+@media only screen and (max-width: 360px) {
+    .card{
+        width: 85%;
+    }
 }

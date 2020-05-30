@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-top-movies',
@@ -9,13 +10,20 @@ import { MovieService } from '../movie.service';
 export class TopMoviesComponent implements OnInit {
   top_movies;
 
-  constructor(private _movieService: MovieService) { }
+  
+
+  constructor(private movieService: MovieService, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
-    this._movieService.getTopMovies().subscribe(data => {this.top_movies = data;})
+    this.appComponent.search_box_in_nav = true;
+    this.movieService.getTopMovies().subscribe(data => {this.top_movies = data;})
   }
 
   sendId(id){
-    this._movieService.saveMovieId(id);
+    this.movieService.saveMovieId(id);
+  }
+
+  pageButton(page: number){
+    this.movieService.getPage('top_rated', page).subscribe(data => {this.top_movies = data;});
   }
 }

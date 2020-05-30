@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { AppComponent } from '../app.component';
 
 
 
@@ -11,14 +12,19 @@ import { MovieService } from '../movie.service';
 export class PopularMoviesComponent implements OnInit {
 
   movies;
-  constructor(private _movieService: MovieService) {}
+  constructor(private movieService: MovieService, private appComponent: AppComponent) {}
 
   ngOnInit(): void {
-    this._movieService.getPopularMovies().subscribe(data => {this.movies = data;});
+    this.appComponent.search_box_in_nav = true;
+    this.movieService.getPopularMovies().subscribe(data => {this.movies = data;});
   }
 
   sendId(id){
-    this._movieService.saveMovieId(id);
+    this.movieService.saveMovieId(id);
+  }
+
+  pageButton(page: number){
+    this.movieService.getPage('popular', page).subscribe(data => {this.movies = data;});
   }
   
 }

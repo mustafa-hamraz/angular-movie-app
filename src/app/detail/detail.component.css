@@ -2,3 +2,21 @@
     background: rgb(140, 74, 246);
     color: white;
 }
+div{
+    margin-bottom: 10px;
+}
+#detailImg{
+    display: flex;
+    justify-self: center;
+}
+
+button{
+    background: rgb(140, 74, 246);
+    color: white;
+    margin: 5px 0px 30px 0;
+    border: none;
+    border-radius: 5px;
+}
+button:hover{
+    background: rgb(162, 116, 236)
+}

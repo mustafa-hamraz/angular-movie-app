@@ -1,22 +1,26 @@
 <!-- Navbar and Navbar content -->
 <header>
-    <nav class="navbar justify-content-center">
-      <ul class="nav ">
+    <nav class="navbar justify-content-left">
+      <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link customEdit" routerLink="/search">Search</a>
+          <a class="nav-link customEdit selectedLink" [class.selectedLink]="popular_link_selected" (click)="linkClick('popular')" routerLink="/popular">Most Popular </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link customEdit" routerLink="/popular">Most Popular </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link customEdit" routerLink="/top-rated">Top Rated</a>
+          <a class="nav-link customEdit selectedLink" [class.selectedLink]="top_rated_link_selected" (click)="linkClick('top_rated')" routerLink="/top-rated">Top Rated</a>
         </li>
       </ul>
+
+      <form  class="form-inline my-2 my-lg-0" *ngIf="search_box_in_nav==true" >
+        <input #searchBox class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button  class="btn btn-outline-success my-2 my-sm-0"  id="srcBtn" type="submit" routerLink="/search" (click)="searchBotton(searchBox.value)">Search</button>
+      </form>
+      
     </nav>
 </header>
-
 
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
+<app-footer></app-footer>

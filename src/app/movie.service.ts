@@ -28,12 +28,11 @@ export class MovieService {
     return this.http.get("https://api.themoviedb.org/3/movie/"+ this.movieId +"?api_key="+ this.apikey);
   }
 
-  searchMovies(term: string){
-    console.log("searchMovies() Got The Messege");
-    if(!term.trim()){
-      return of([]);
-    }
+  searchMovies(term){
+  return this.http.get("https://api.themoviedb.org/3/search/movie?api_key="+ this.apikey + "&query=" + term);
+  }
 
-    return this.http.get("https://api.themoviedb.org/3/search/movie?api_key="+ this.apikey + "&query="+term);
-  } 
+  getPage(pageContainet: string, pageNumber: number){
+    return this.http.get("https://api.themoviedb.org/3/movie/"+pageContainet+"?api_key="+ this.apikey + "&page="+pageNumber);
+  }
 }

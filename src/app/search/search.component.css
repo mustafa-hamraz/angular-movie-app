@@ -1,0 +1,69 @@
+.movieSearchBox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.movieSearchInput{
+    border: 5em; 
+    border-radius: 10em 0 0em 10em;
+    border: 2px rgb(111, 0, 255) solid;
+    border-right: 0;
+    height: 3em;
+    width: 70%;
+    padding-left: 5%;
+    margin-bottom: 10px;
+    outline: none;
+}
+.movieSearchInput{
+    outline: none;
+}
+.searchBtn{
+    background: rgb(111, 0, 255);
+    color: white;
+    border: 2px rgb(111, 0, 255) solid;
+    width: 20%;
+    border-radius: 0 10em 10em 0;
+    height: 3em;
+}
+.searchBtn:hover{
+    background: rgb(150, 89, 230);
+    border: 2px rgb(150, 89, 230) solid;
+}
+.searchBtn:focus {outline:0;}
+
+ul{
+    list-style-type: 'none';
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    width: 12rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+}
+.card:hover{
+    cursor: pointer;
+    opacity:0.7;
+}
+@media only screen and (max-width: 444px) {
+    .card{
+        width: 45%;
+    }
+    .searchBtn{
+        font-size: small;
+    }
+    .movieSearchInput{
+        font-size: small;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .card{
+        width: 85%;
+    }
+}

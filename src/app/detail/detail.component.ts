@@ -10,6 +10,7 @@ import { MovieService } from '../movie.service';
 export class DetailComponent implements OnInit {
 
   details;
+  img;
 
   constructor(private _movieService: MovieService, private location: Location) { }
 

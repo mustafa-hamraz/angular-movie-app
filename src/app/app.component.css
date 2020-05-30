@@ -1,7 +1,16 @@
-.customEdit{color: white;}
+.customEdit{
+    color: rgb(233, 216, 196);
+}
+
 .customEdit:hover 
 {
- color: rgb(233, 216, 196);   
+ color: white;  
+}
+
+.selectedLink{
+    font-weight: bold;
+    color: white;
+
 }
 
 nav{
@@ -10,5 +19,9 @@ nav{
 
 div{
     margin-top: 2em;
+}
+
+#srcBtn{
+    color: white;
 }
 

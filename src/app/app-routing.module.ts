@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'top-rated', component: TopMoviesComponent },
   {path: 'detail', component: DetailComponent },
   {path: 'search', component: SearchComponent },
-  {path: '', redirectTo: '/search', pathMatch: 'full' }
+  {path: '', redirectTo: '/popular', pathMatch: 'full' }
 ];
 
 @NgModule({

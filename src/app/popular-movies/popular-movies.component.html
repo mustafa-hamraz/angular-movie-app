@@ -1,12 +1,20 @@
 <h2>Most Popular Movies</h2>
 
-
 <ul *ngIf="movies">
-    <li *ngFor="let movie of movies.results" routerLink="/detail" (click)="sendId(movie.id)">
-        <p class="title">{{ movie.title }}</p>
-        <p>{{ movie.release_date }}</p>
-        <br>
-        <p class="vote">Votes: {{ movie.vote_average }}</p>
-    </li>
+    <div *ngFor="let movie of movies.results" routerLink="/detail" (click)="sendId(movie.id)" class="card" >
+        <img src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" class="card-img-top">
+        <div class="card-body">
+          <h6 class="card-title">{{ movie.title }}</h6>
+        </div>
+    </div>
 </ul>
 
+<div id="pageBtns" class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-secondary" (click)="pageButton(1)">1</button>
+    <button type="button" class="btn btn-secondary" (click)="pageButton(2)">2</button>
+    <button type="button" class="btn btn-secondary" (click)="pageButton(3)">3</button>
+    <button type="button" class="btn btn-secondary" (click)="pageButton(4)">4</button>
+    <button type="button" class="btn btn-secondary" (click)="pageButton(5)">5</button>
+  </div>
+</div>
